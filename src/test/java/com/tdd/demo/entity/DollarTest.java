@@ -10,8 +10,10 @@ class DollarTest {
     @Test
     void testMultiplication() {
         Dollar five = new Dollar(5);
-        five.times(2);
-        assertThat(10).isEqualTo(five.amount);
+        Dollar dollar = five.times(2);
+        assertThat(10).isEqualTo(dollar.amount);
+        dollar = five.times(10);
+        assertThat(50).isEqualTo(dollar.amount);
     }
 
 }
