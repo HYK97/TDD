@@ -1,10 +1,7 @@
 package com.tdd.demo.entity;
 
-import lombok.EqualsAndHashCode;
+public class Franc extends Money {
 
-@EqualsAndHashCode
-public class Franc {
-    private final int amount;
 
     public Franc(int amount) {
         this.amount = amount;

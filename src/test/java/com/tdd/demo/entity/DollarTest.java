@@ -17,12 +17,14 @@ class DollarTest {
     }
 
     @Test
-    public void equeal() {
+    public void equal() {
         //given
         //when
         //then
-        assertThat(new Dollar(5)).isEqualTo(new Dollar(5));
-        assertThat(new Dollar(10)).isEqualTo(new Dollar(10));
+        assertThat(new Dollar(0)).isEqualTo(new Dollar(0));
+        assertThat(new Dollar(10)).isNotEqualTo(new Dollar(11));
+        assertThat(new Franc(5)).isEqualTo(new Franc(5));
+        assertThat(new Franc(10)).isNotEqualTo(new Franc(11));
     }
 
     @Test

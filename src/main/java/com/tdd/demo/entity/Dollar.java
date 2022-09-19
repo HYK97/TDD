@@ -1,10 +1,7 @@
 package com.tdd.demo.entity;
 
-import lombok.EqualsAndHashCode;
+public class Dollar extends Money {
 
-@EqualsAndHashCode
-public class Dollar {
-    private final int amount;
 
     public Dollar(int amount) {
         this.amount = amount;
