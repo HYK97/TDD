@@ -1,5 +1,8 @@
 package com.tdd.demo.entity;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 public class Dollar {
     int amount;
 

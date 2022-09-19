@@ -16,4 +16,14 @@ class DollarTest {
         assertThat(50).isEqualTo(dollar.amount);
     }
 
+    @Test
+    public void equeal() {
+        //given
+        //when
+        //then
+        assertThat(new Dollar(5)).isEqualTo(new Dollar(5));
+        assertThat(new Dollar(10)).isEqualTo(new Dollar(10));
+    }
+
+
 }
