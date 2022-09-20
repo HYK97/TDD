@@ -38,5 +38,16 @@ class DollarTest {
         assertThat(franc(15)).isEqualTo(five.times(3));
     }
 
+    @Test
+    public void testDifferentClassEquality() {
+        //given
+        //when
+        //then
+        assertThat(new Money(10, "CHF")).isEqualTo(new Franc(10, "CHF"));
+        assertThat(new Money(10, "USD")).isEqualTo(new Dollar(10, "USD"));
+        assertThat(new Money(1, "CHF")).isNotEqualTo(new Dollar(10, "USD"));
+        assertThat(new Money(10, "CHF")).isNotEqualTo(new Dollar(10, "USD"));
+    }
+
 
 }
