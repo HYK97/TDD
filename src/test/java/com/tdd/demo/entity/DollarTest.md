@@ -14,6 +14,9 @@
 - hashCode()
 - Equal null
 - Equal object
-- Dollar/Franc 중복 제거
+- **Dollar/Franc 중복 제거**
 - ~~공용 equals~~
 - 공용 tiems
+- ~~Franc 과 Dollar 비교하기~~
+- 통화?
+- testFrancMultiplication 를 지워야될지

@@ -1,5 +1,6 @@
 package com.tdd.demo.entity;
 
+
 public class Franc extends Money {
 
 
@@ -7,8 +8,8 @@ public class Franc extends Money {
         this.amount = amount;
     }
 
-
-    public Franc times(int multiplier) {
+    @Override
+    public Money times(int multiplier) {
         return new Franc(amount * multiplier);
     }
 }

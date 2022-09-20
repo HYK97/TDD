@@ -2,6 +2,8 @@ package com.tdd.demo.entity;
 
 import org.junit.jupiter.api.Test;
 
+import static com.tdd.demo.entity.Money.dollar;
+import static com.tdd.demo.entity.Money.franc;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class DollarTest {
@@ -9,11 +11,9 @@ class DollarTest {
 
     @Test
     void testMultiplication() {
-        Dollar five = new Dollar(5);
-        Dollar dollar = five.times(2);
-        assertThat(new Dollar(10)).isEqualTo(dollar);
-        dollar = five.times(10);
-        assertThat(new Dollar(50)).isEqualTo(dollar);
+        Money five = dollar(5);
+        assertThat(dollar(10)).isEqualTo(five.times(2));
+        assertThat(dollar(50)).isEqualTo(five.times(10));
     }
 
     @Test
@@ -21,20 +21,21 @@ class DollarTest {
         //given
         //when
         //then
-        assertThat(new Dollar(0)).isEqualTo(new Dollar(0));
-        assertThat(new Dollar(10)).isNotEqualTo(new Dollar(11));
-        assertThat(new Franc(5)).isEqualTo(new Franc(5));
-        assertThat(new Franc(10)).isNotEqualTo(new Franc(11));
+        assertThat(dollar(0)).isEqualTo(dollar(0));
+        assertThat(dollar(5)).isNotEqualTo(dollar(11));
+        assertThat(franc(5)).isEqualTo(franc(5));
+        assertThat(franc(10)).isNotEqualTo(franc(11));
+        assertThat(franc(10)).isNotEqualTo(dollar(10));
     }
 
     @Test
     public void testFrancMultiplication() {
         //given
         //when
-        Franc five = new Franc(5);
+        Money five = franc(5);
         //then
-        assertThat(new Franc(10)).isEqualTo(five.times(2));
-        assertThat(new Franc(15)).isEqualTo(five.times(3));
+        assertThat(franc(10)).isEqualTo(five.times(2));
+        assertThat(franc(15)).isEqualTo(five.times(3));
     }
 
 
