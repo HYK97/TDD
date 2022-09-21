@@ -28,4 +28,17 @@ class DollarTest {
         assertThat(franc(10)).isNotEqualTo(dollar(10));
     }
 
+    @Test
+    public void testSimpleAddition() {
+        //given
+        Money five = Money.dollar(5);
+        Expression sum = five.plus(five);
+        Bank bank = new Bank();
+        Money reduced = bank.reduce(sum, "USD");
+        //when
+        //then
+        assertThat(reduced).isEqualTo(Money.dollar(10));
+
+    }
+
 }

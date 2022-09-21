@@ -11,7 +11,7 @@ import java.util.Objects;
  * 예상치 못한 동작을 할수있다.
  * */
 
-public class Money {
+public class Money implements Expression {
     protected String currency;
 
     protected int amount;
@@ -43,5 +43,9 @@ public class Money {
     @Override
     public int hashCode() {
         return Objects.hash(currency, amount);
+    }
+
+    public Expression plus(Money add) {
+        return new Money(amount + add.amount, currency);
     }
 }
