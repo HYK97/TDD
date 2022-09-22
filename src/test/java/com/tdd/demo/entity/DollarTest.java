@@ -38,6 +38,18 @@ class DollarTest {
         //when
         //then
         assertThat(reduced).isEqualTo(Money.dollar(10));
+    }
+
+    @Test
+    public void testPlusReturnSum() {
+        //given
+        Money five = Money.dollar(5);
+        Expression result = five.plus(five);
+        Sum sum = (Sum) result;
+        //when
+        //then
+        assertThat(sum.augend).isEqualTo(five);
+        assertThat(sum.addend).isEqualTo(five);
 
     }
 

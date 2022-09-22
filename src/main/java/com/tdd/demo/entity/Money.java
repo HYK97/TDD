@@ -45,7 +45,12 @@ public class Money implements Expression {
         return Objects.hash(currency, amount);
     }
 
-    public Expression plus(Money add) {
-        return new Money(amount + add.amount, currency);
+    public Sum plus(Money addend) {
+        return new Sum(this, addend);
+    }
+
+    @Override
+    public Money reduce(String to) {
+        return this;
     }
 }
